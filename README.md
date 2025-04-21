@@ -1,21 +1,30 @@
-# IOT + AR | Home Automation Using Snap Spectacles
+# IOT + AR | Home Automation Using Snap Spectacles 🏠🕶️
 
-## Overview
+## Overview 📜
 
-This project allows you to control Tuya-powered devices (like Homemate) using gestures in an Augmented Reality (AR) lens on Spectacles. By looking at the mapped smart device in your environment, you can use hand gestures to perform actions (such as turning a device on/off) and control the device states in real life. This particular project demonstrates the Tuya powered smart devices control.
+This project allows you to control Tuya-powered devices (like Homemate) using gestures in an Augmented Reality (AR) lens on Spectacles. By looking at the mapped smart device in your environment, you can use hand gestures to perform actions (such as turning a device on/off) and control the device states in real life. This particular project demonstrates the Tuya-powered smart devices control. 🌐
 
 The setup consists of two main components:
 
-1. **WebSocket Server**: A Python-based WebSocket server that listens for incoming commands, processes them, and communicates with Tuya-powered devices.
-2. **Lens Studio Project**: An AR project in Snap's Lens Studio that displays the IoT devices in the real world and listens for WebSocket commands to trigger actions.
+1. **WebSocket Server**: A Python-based WebSocket server that listens for incoming commands, processes them, and communicates with Tuya-powered devices. 💻
+2. **Lens Studio Project**: An AR project in Snap's Lens Studio that displays the IoT devices in the real world and listens for WebSocket commands to trigger actions. 🤳
 
 This README guides you through setting up both parts of the system.
 
 ---
 
-## WebSocket Server Setup
+## Demo 📹
 
-### Step 1: Install Python
+Check out a demo of how this project works! 
+
+- **Demo GIF**: ![Demo GIF](assets\demo-preview.gif)  
+- **Demo Video**: [Watch Demo Video](https://drive.google.com/file/d/1wjhooA5Lid6ZewcscjueHy6zZUpiS2Ux/view?usp=drivesdk)
+
+---
+
+## WebSocket Server Setup 🚀
+
+### Step 1: Install Python 🐍
 
 Ensure that Python is installed on your machine. You can check if Python is installed by running the following command in your terminal or command prompt:
 
@@ -25,7 +34,7 @@ python --version
 
 If Python is not installed, download and install it from the official [Python website](https://www.python.org/downloads/).
 
-### Step 2: Install Required Packages
+### Step 2: Install Required Packages 📦
 
 Clone or download the repository containing this project. Then, open your terminal/command prompt, navigate to the project folder, and install the necessary Python packages by running:
 
@@ -44,7 +53,7 @@ If you encounter any issues installing the packages, ensure that you have `pip` 
 pip install --upgrade pip
 ```
 
-### Step 3: Configure the Tuya API
+### Step 3: Configure the Tuya API 🌐
 
 This project uses the `tinytuya` library to interact with Tuya-powered devices. You'll need to update the API configurations with your own credentials.
 
@@ -56,7 +65,7 @@ Follow these steps to find your credentials:
 
 1. Sign in to your [Tuya IoT platform](https://iot.tuya.com/).
 2. Create a new project and add your devices.
-3. Link your devices under Devices section. 
+3. Link your devices under the Devices section.
 4. Obtain the API key, API secret, and device ID from the Tuya Cloud console.
 
 Replace the placeholders in the `websocket_server.py` file with your actual values:
@@ -67,7 +76,7 @@ API_SECRET = "your_api_secret"
 DEVICE_ID = "your_device_id"
 ```
 
-### Step 4: Start the WebSocket Server
+### Step 4: Start the WebSocket Server 🖥️
 
 After configuring the API credentials, start the WebSocket server by running the following command:
 
@@ -77,9 +86,9 @@ python websocket_server.py
 
 The server will start and begin listening on port `8765` for incoming WebSocket connections. When a client connects and sends a valid message, the server will control the IoT device based on the message's instructions.
 
-### Step 5: Expose Your Local WebSocket Server Using Ngrok
+### Step 5: Expose Your Local WebSocket Server Using Ngrok 🔐
 
-To enable remote communication between Lens Studio and your local server, you'll need to expose your WebSocket server to the internet since only secured protocols are allowed by Remote Service Module at the moment. This can be done using [Ngrok](https://ngrok.com/), which creates a secure tunnel to your localhost.
+To enable remote communication between Lens Studio and your local server, you'll need to expose your WebSocket server to the internet as only secured protocols are allowed by the Remote Service Module for connection at the moment. This can be done using [Ngrok](https://ngrok.com/), which creates a secure tunnel to your localhost.
 
 1. **Download and Install Ngrok**: Follow the installation instructions on the [Ngrok website](https://ngrok.com/download).
 2. **Expose Port 8765**: In your terminal, run:
@@ -92,17 +101,17 @@ To enable remote communication between Lens Studio and your local server, you'll
 
 ---
 
-## Lens Studio Setup
+## Lens Studio Setup 🕶️
 
-### Step 1: Setup Lens Studio Project
+### Step 1: Setup Lens Studio Project 🔧
 
-Open **Lens Studio** and open the provided project.
+Open **Lens Studio** (This Project Uses v5.7.2) and open the provided project.
 
 1. **Customize the Environment**: You can set up the project to represent the space in which your IoT devices are located (e.g., your room, office, etc.).
 
 2. **Add Scene Objects**: Place the labels and outlines of the devices that you want to control (such as a fan or light) in the scene. These objects will act as markers for your smart devices.
 
-### Step 2: Replace Location Asset ID
+### Step 2: Replace Location Asset ID 🌍
 
 In the **Location Asset** section of your Lens Studio project, replace the default location ID with your custom landmark ID.
 
@@ -110,13 +119,13 @@ In the **Location Asset** section of your Lens Studio project, replace the defau
 
 - This helps the AR experience accurately place the virtual devices in the correct real-world locations.
 
-### Step 3: Place Device Objects and Labels
+### Step 3: Place Device Objects and Labels 🖥️
 
 Now, place outlines & labels for your devices based on where they exist in the real world.
 
-- For example, if you have a **fan** and a **light**, you would place their placholder objects in the virtual space to match their real-world counterparts.
+- For example, if you have a **fan** and a **light**, you would place their placeholder objects in the virtual space to match their real-world counterparts.
 
-### Step 4: Update the WebSocket Address
+### Step 4: Update the WebSocket Address 🌐
 
 In the Lens Studio project, find the script responsible for connecting to the WebSocket server. Replace the WebSocket URL in the script with the one generated by Ngrok (remember to use `wss://` instead of `https://`).
 
@@ -126,29 +135,28 @@ Replace `https://xxxxxx.ngrok.io` with `wss://xxxxxx.ngrok.io`
 
 This will ensure that Lens Studio connects to your local WebSocket server, allowing communication between the AR lens and your IoT devices.
 
-### Step 5: Preview on Spectacles
+### Step 5: Preview on Spectacles 👓
 
 Once you've updated the WebSocket address, preview the lens on your **Spectacles** to check if everything works as expected. The lens should now allow you to interact with the devices in your environment using hand gestures.
 
 ---
 
-## Optional Customizations
+## Optional Customizations ✨
 
-### Gestures and Commands
+### Gestures and Commands 🤲
 
 You can customize the hand gestures and commands in both the **WebSocket server** and **Lens Studio**:
 
 - **Gestures**: Modify the gestures used to trigger actions (e.g., turn on/off).
 - **Commands**: Modify the device control commands sent by the WebSocket server. For example, you can map different gestures to control multiple devices.
 
-
-### Device Control Logic
+### Device Control Logic 🖥️
 
 If you're using different types of devices or want to use a different IoT platform, you can replace the Tuya-specific logic in the server with your own device control logic.
 
 ---
 
-## Attribution
+## Attribution ✨
 
 This project was created by **Krunal MB Gediya (Krazyy Krunal)**.
 
@@ -165,10 +173,6 @@ This system forms the foundation of a highly personalized **Augmented Reality Sm
 
 ---
 
-## License
+## License 📜
 
 This project is open-source and licensed under the MIT License. Feel free to use and modify it for your own needs. If you decide to contribute, please follow the standard GitHub practices.
-
----
-
-Feel free to modify this README as necessary for your project!
