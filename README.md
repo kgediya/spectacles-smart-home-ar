@@ -17,7 +17,7 @@ This README guides you through setting up both parts of the system.
 
 Check out a demo of how this project works! 
 
-- **Demo GIF**: ![Demo GIF](assets\demo-preview.gif)  
+- **Demo GIF**: ![Demo GIF](assets/demo-preview.gif)  
 - **Demo Video**: [Watch Demo Video](https://drive.google.com/file/d/1wjhooA5Lid6ZewcscjueHy6zZUpiS2Ux/view?usp=drivesdk)
 
 ---
