@@ -1,0 +1,53 @@
+- !<AssetImportMetadata/7e21fa4b-12c7-4014-8b81-9224f12949a6>
+  ImportedAssetIds:
+    JavaScriptAsset: !<reference> 395fb45b-2f89-4815-8b28-bb19fa2abf9e
+  ImporterName: JavaScriptAssetImporter
+  PrimaryAsset: !<reference> 395fb45b-2f89-4815-8b28-bb19fa2abf9e
+  PackageType: NotAPackage
+  PackagePolicy: CannotBeUnpacked
+  ExtraData:
+    {}
+  AssetDataMap:
+    JavaScriptAsset: !<own> 162c9c4b-23e0-4cb5-9e91-681e26011fb0
+  DependentFiles:
+    []
+  ImporterSettings: !<AssetImporterSettings>
+    {}
+  CompressionSettings: !<own> 00000000-0000-0000-0000-000000000000
+- !<ScriptAssetData/162c9c4b-23e0-4cb5-9e91-681e26011fb0>
+  SvgIcon: ""
+  Description: ""
+  InternalVersion: 0
+  VersionMajor: 0
+  VersionMinor: 0
+  VersionPatch: 0
+  ComponentUid: 0fcd63dc-b5b1-44dd-b3db-06b4c772ae17
+  ExportUid: 00000000-0000-0000-0000-000000000000
+  CurrentVisibility: Editable
+  MaxVisibility: Editable
+  ScriptInputsHidden:
+    angleThreshold: false
+    debugMode: false
+    debugText: false
+    mainTrackingCam: false
+    remoteServiceModule: false
+    socketURL: false
+    targetObjects: false
+  ScriptTypesHidden:
+    {}
+  DefaultScriptInputs:
+    - remoteServiceModule: !<reference.RemoteServiceModule> 21d84e21-c629-409e-81ca-65b41b855095
+      lightSceneObject: !<reference.SceneObject> 00000000-0000-0000-0000-000000000000
+      mainTrackingCam: !<reference.Camera> 00000000-0000-0000-0000-000000000000
+      angleThreshold: !<float> 10.000000
+      debugText: !<reference.Text> 00000000-0000-0000-0000-000000000000
+      fanObject: !<reference.SceneObject> 00000000-0000-0000-0000-000000000000
+      sideLight: !<reference.SceneObject> 00000000-0000-0000-0000-000000000000
+      targetObjects: !<reference.SceneObject[]>
+        []
+      debugMode: false
+      socketURL: "wss://your-ngrok-or-server-url.com"
+  ScriptTypes:
+    -
+      {}
+  DeclarationFile: !<reference> 00000000-0000-0000-0000-000000000000

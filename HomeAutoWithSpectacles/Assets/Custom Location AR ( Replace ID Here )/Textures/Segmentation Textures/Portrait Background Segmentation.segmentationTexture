@@ -1,0 +1,6 @@
+- !<SegmentationTexture/c586b814-2175-4654-917c-7aa6928b9743>
+  PackagePath: ""
+  SegmentationType: PortraitSegmentation
+  InvertMask: true
+  Feathering: 0.500000
+  RefineEdge: true
